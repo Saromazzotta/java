@@ -1,4 +1,3 @@
-package cafeJava;
 import java.util.Scanner;
 public class CafeJava {
     public static void main(String[] args) {
