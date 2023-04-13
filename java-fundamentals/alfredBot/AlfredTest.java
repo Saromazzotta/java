@@ -22,12 +22,10 @@
 
             // Print the greetings to test.
             System.out.println(testGreeting);
-
-            // Uncomment these one at a time as you implement each method.
-            // System.out.println(testGuestGreeting);
-            // System.out.println(testDateAnnoucement);
-            // System.out.println(alexisTest);
-            // System.out.println(alfredTest);
-            // System.out.println(notRelevantTest);
+            System.out.println(testGuestGreeting);
+            System.out.println(testDateAnnoucement);
+            System.out.println(alexisTest);
+            System.out.println(alfredTest);
+            System.out.println(notRelevantTest);
         }
         }

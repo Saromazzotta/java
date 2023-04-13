@@ -10,17 +10,27 @@ public class AlfredQuotes {
 
     public String guestGreeting(String name) {
         // YOUR CODE HERE
-        return String.format("Hello %s.");
+        String guestGreeting = String.format("Hello %s.", name);
+        return guestGreeting;
     }
 
+    
     public String dateAnnoucement() {
         // YOUR CODE HERE
-        return "placeholder for date annoucement return string";
+        return String.format("The current date is %s", new java.util.Date());
     }
 
     public String respondBeforeAlexis(String conversation) {
         // YOUR CODE HERE 
-        return "for snarky response return string";
+        if (conversation.indexOf("Alexis") > - 1) {
+            return "What a sorry excuse for an AI. Let me help you instead.";
+        }
+        if (conversation.indexOf("Alfred") > -1 ) {
+            return "Happy to be of assisstance. What can I do for you?";
+        }
+        
+        return "Right. And with that I shall retire.";
+
     }
 
         // NINJA BONUS
