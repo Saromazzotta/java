@@ -69,6 +69,9 @@ public class CafeJava {
         System.out.println(orderStatus ? customerName + readyMessage +  displayTotalMessage + totalPrice : customerName + pendingMessage + displayTotalMessage + totalPrice);
 
 
+
+        // completing without using switches and cases
+
         // if (isReadyOrder2) {
         //     System.out.println(customer2 + ", " + displayTotalMessage + latte * 2);
         // }
