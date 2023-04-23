@@ -1,0 +1,16 @@
+
+public class Driver extends Car {
+
+	
+	// constructor
+	public Driver() {
+		super();
+	
+	}
+
+	public void drive(int gas) {
+		setGas(gas - 1);
+		
+		
+	}
+}

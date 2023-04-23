@@ -1,0 +1,14 @@
+
+public class Driver extends Car {
+
+	// constructor
+	public Driver(int gas) {
+		super(gas);
+		// TODO Auto-generated constructor stub
+	}
+
+	public void drive() {
+		
+		
+	}
+}

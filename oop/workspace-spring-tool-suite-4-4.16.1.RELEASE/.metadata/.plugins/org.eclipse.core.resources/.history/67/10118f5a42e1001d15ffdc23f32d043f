@@ -1,0 +1,17 @@
+
+public class Driver extends Car {
+
+	
+	// constructor
+	public Driver() {
+		super();
+	
+	}
+
+	public void drive(int gas) {
+		super();
+		setGas(gas - 1);
+		System.out.println("Driving, gas remaining: " + gas);
+		
+	}
+}

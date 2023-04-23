@@ -1,0 +1,33 @@
+
+public class Car {
+
+	private int gas = 10;
+
+	// constructor
+	public Car(int gas) {
+		super();
+		this.gas = gas;
+	}
+	
+	
+	public void displayGas() {
+		System.out.println("Gas remaining: " + gas);
+	}
+
+
+	
+	
+	
+	
+	
+	// GETTERS AND SETTERS
+	public int getGas() {
+		return gas;
+	}
+
+	public void setGas(int gas) {
+		this.gas = gas;
+	}
+
+
+}

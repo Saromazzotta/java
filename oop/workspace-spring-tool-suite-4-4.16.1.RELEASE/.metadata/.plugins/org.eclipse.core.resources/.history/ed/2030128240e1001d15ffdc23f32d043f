@@ -1,0 +1,11 @@
+
+public class Car {
+	private int gas = 10;
+
+	public void displayGas() {
+		System.out.println("Gas remaining: " + gas);
+	}
+
+	// GETTERS AND SETTERS
+
+}
