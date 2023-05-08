@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+/* Page Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;   
+}
+
+.container {
+	display: flex;
+}
+
+
+#place {
+	height: 250px;
+	width: 250px;
+	border: 2px solid black;
+	margin: 0px 0px 10px 10px;
+}
+
+
+button {
+	margin-top: 15px;
+	justify-content: end; 
+}
