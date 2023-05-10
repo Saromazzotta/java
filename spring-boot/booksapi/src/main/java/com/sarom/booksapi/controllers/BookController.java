@@ -16,7 +16,7 @@ import com.sarom.booksapi.services.BookService;
 public class BookController {
 
 	@Autowired
-	BookService bookService;
+	private BookService bookService;
 	
 	@GetMapping("/books")
 	public String allBooks(Model model) {
