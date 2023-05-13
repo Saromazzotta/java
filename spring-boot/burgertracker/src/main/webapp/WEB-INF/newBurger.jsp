@@ -29,6 +29,7 @@
 			<td><c:out value="${oneBurger.restaurantName}"/></td>
 			<td><c:out value="${oneBurger.rating}"/></td>
 			<td><a href="/burgers/edit/${oneBurger.id}">edit</a></td>
+			<td><a style="color: red" href="/burgers/delete/${oneBurger.id}">delete</a></td>
 		</tr>	
 		</c:forEach>
 	</tbody>

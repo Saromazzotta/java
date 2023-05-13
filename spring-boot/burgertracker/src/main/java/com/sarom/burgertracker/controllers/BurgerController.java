@@ -54,7 +54,7 @@ public class BurgerController {
 	}
 	
 	//UPDATE
-	@PutMapping("/burgers/update/{id}")
+	@PutMapping("/burgers/update/{id}")  //in edit route always must use {id} or new item will be created in the database
 	public String updateBurger(@Valid @ModelAttribute("thisBurger") Burger updatedBurger, 
 			BindingResult result,
 			@PathVariable("id") Long id) {
@@ -63,7 +63,13 @@ public class BurgerController {
 		}
 		this.burgerService.updateBurger(updatedBurger);
 		return "redirect:/";
-		
+	}
+	
+	//DELETE
+	@GetMapping("/burgers/delete/{burgerId}")
+	public String deleteBurger(@PathVariable("burgerId") Long burgerId) {
+		this.burgerService.deleteById(burgerId);
+		return "redirect:/";
 	}
 
 }

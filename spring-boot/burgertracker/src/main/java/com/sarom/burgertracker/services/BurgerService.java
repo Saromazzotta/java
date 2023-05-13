@@ -42,4 +42,8 @@ public class BurgerService {
 		return this.burgerRepository.save(updatedBurger);
 	}
 
+	// DELETE
+	public void deleteById(Long id) {
+		this.burgerRepository.deleteById(id);
+	}
 }
