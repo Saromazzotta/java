@@ -22,11 +22,6 @@ public class BurgerService {
 		return burgerRepository.findAll();
 	}
 	
-	// CREATE ONE
-	public Burger createBurger(Burger newBurger) {
-		return burgerRepository.save(newBurger);
-	}
-	
 	//FIND ONE
 	public Burger findBurger(Long id) {
 		Optional<Burger> optionBurger = burgerRepository.findById(id);
@@ -35,6 +30,16 @@ public class BurgerService {
 		} else {
 			return null;
 		}
+	}
+	
+	// CREATE ONE
+	public Burger createBurger(Burger newBurger) {
+		return burgerRepository.save(newBurger);
+	}
+	
+	// UPDATE
+	public Burger updateBurger(Burger updatedBurger) {
+		return this.burgerRepository.save(updatedBurger);
 	}
 
 }

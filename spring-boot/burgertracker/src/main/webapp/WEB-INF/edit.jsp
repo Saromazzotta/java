@@ -1,41 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="java.util.Date"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<title>Edit Burger</title>
 <link rel="stylesheet" href="/css/style.css"/>
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
-<title>Burger Tracker</title>
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-	<h1>Burger Tracker</h1>
-	<table class="table">
-	<thead>
-		<tr>
-			<th scope="col">Burger Name</th>
-			<th scope="col">Restaurant Name</th>
-			<th scope="col">Rating (out of 5)</th>
-			<th scope="col">Action</th>
-		</tr>
-	</thead>
-	<tbody>
-		<c:forEach var="oneBurger" items="${allBurgers}" >
-		<tr>
-			<td><c:out value="${oneBurger.burgerName}"/></td>
-			<td><c:out value="${oneBurger.restaurantName}"/></td>
-			<td><c:out value="${oneBurger.rating}"/></td>
-			<td><a href="/burgers/edit/${oneBurger.id}">edit</a></td>
-		</tr>	
-		</c:forEach>
-	</tbody>
-	</table>
+	<div class="d-flex justify-content-between">
+		<h1>Edit Burger:</h1>
+		<a class="mt-3" href="/">Go back</a>
 	
-	<h1>Add a Burger:</h1>
-	<form:form action="/" method="post" modelAttribute="burger">
+	</div>
+	
+	<form:form action="/burgers/update/${thisBurger.id}" method="put" modelAttribute="thisBurger">
+		<!-- <input type="hidden" name="method" value="put"/> -->
 		<div class="mb-3">
 			<form:label path="burgerName" class="form-label">Burger Name</form:label>
 			<form:errors path="burgerName"/>
@@ -62,7 +49,5 @@
 		
 		<button class="btn btn-primary">Submit</button>
 	</form:form>
-	
-	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
