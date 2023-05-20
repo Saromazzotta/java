@@ -22,7 +22,7 @@ public class DojoController {
 	private DojoService dojoService;
 	
 	@Autowired
-	private NinjaService ninjaService;
+//	private NinjaService ninjaService;
 	
 	@GetMapping("/dojos/new")
 	public String newDojo(@ModelAttribute("dojo")Dojo dojo, Model viewmodel) {
@@ -49,5 +49,6 @@ public class DojoController {
 	}
 	
 	
+	// It may be a good idea to have one controller called MainController instead of splitting them off into separate controllers for at least a project at this scale.
 	
 }
