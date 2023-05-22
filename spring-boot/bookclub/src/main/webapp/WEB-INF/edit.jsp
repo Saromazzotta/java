@@ -16,10 +16,33 @@
 <body>
 
 	<div id="wrapper">
+	
 		<div class="d-flex justify-content-between">
-			<h1 style="color: purple;">${book.title}</h1>
+			<h1 style="color: purple;">${updatedBook.title}</h1>
 			<a href="/books">Back to the shelves</a>
 		</div>
+		
+		<form:form action="/books/update/${updatedBook.id}" method="put" modelAttribute="updatedBook">
+			<form:errors class="error" path="title"/>
+			<div class="form-floating mb-3">
+				<form:input class="form-control" id="title" path="title" placeholder="#"/>
+				<form:label path="title" for="title">Title:</form:label>
+			</div>
+		
+			<form:errors class="error" path="authorName"/>
+			<div class="form-floating mb-3">
+				<form:input class="form-control" id="authorName" path="authorName" placeholder="#"/>
+				<form:label path="authorName" for="authorName">Author Name:</form:label>
+			</div>
+		
+			<form:errors class="error" path="myThoughts"/>
+			<div class="form-floating mb-3">
+				<form:textarea rows="4" cols="50" class="form-control" id="myThoughts" path="myThoughts" placeholder="#"/>
+				<form:label path="myThoughts" for="myThoughts">My Thoughts:</form:label>
+			</div>
+		
+			<button class="btn btn-primary">Submit</button>
+		</form:form>
 	
 	</div>
 </body>

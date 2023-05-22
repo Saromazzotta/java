@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sarom.bookclub.models.Book;
@@ -82,7 +83,7 @@ public class BooksController {
 	@GetMapping("/delete/{id}")
 	public String deleteBook(@PathVariable("id") Long id,
 			Model viewmodel) {
-		viewmodel.addAttribute("book", bServ.getById(id));
+		viewmodel.addAttribute("book", this.bServ.getById(id));
 		this.bServ.deleteById(id);
 		return "redirect:/books";
 	}
@@ -91,7 +92,21 @@ public class BooksController {
 	@GetMapping("/edit/{id}")
 	public String editBook(@PathVariable("id") Long id,
 			Model viewmodel) {
-		viewmodel.addAttribute("book", bServ.getById(id));
+		viewmodel.addAttribute("updatedBook", this.bServ.getById(id)); // dont need data binding in parameters because we don't need to make a new object we need to render whats already in the db
 		return "edit.jsp";
+	}
+	
+	// UPDATE
+	@PutMapping("/update/{id}")
+	public String updateBook(@Valid @ModelAttribute("updatedBook") Book updatedBook,
+			BindingResult result,
+			HttpSession session,
+			@PathVariable("id") Long id) {
+		if(result.hasErrors()) {
+			return "edit.jsp";
+		}
+		updatedBook.setUser(uServ.getById((long) session.getAttribute("userId"))); //You must reset the user id saved in session to the book on update or it will update in the db without an association to the user.
+		this.bServ.update(updatedBook);
+		return "redirect:/books";
 	}
 }
