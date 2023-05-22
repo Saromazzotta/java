@@ -20,7 +20,7 @@
 			<a href="/books">Back to the shelves</a>
 		</div>
 		
-		<form:form action="/books/new" method="post" modelAttribute="books">
+		<form:form action="/books/new" method="post" modelAttribute="newBook">
 			<form:errors class="error" path="title"/>
 			<div class="form-floating mb-3">
 				<form:input class="form-control" id="title" path="title" placeholder="#"/>

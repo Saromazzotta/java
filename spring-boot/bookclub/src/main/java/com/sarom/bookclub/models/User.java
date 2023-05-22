@@ -23,7 +23,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-// Instance Attributes -----------------------------------------------------------
+// Instance Attributes ------------------------------------------------------------------
 	@NotEmpty(message = "Username is required!")
 	@Size(min = 3, max = 30, message = "Username must be between 3 and 30 characters")
 	private String userName;
@@ -44,11 +44,11 @@ public class User {
 // Table Relationships --------------------------------------------------------------
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Book> books;
-	
-	public User() {
-	}
 
-	// GETTERS & SETTERS
+// CONSTRUCTOR -----------------------------------------------------------------------
+	public User() {}
+
+	// GETTERS & SETTERS ---------------------------------------------------------------
 	public Long getId() {
 		return id;
 	}

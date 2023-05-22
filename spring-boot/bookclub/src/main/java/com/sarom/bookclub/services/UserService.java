@@ -1,5 +1,6 @@
 package com.sarom.bookclub.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -28,6 +29,9 @@ public class UserService {
 	}
 	
 	//GET ALL
+	public List<User>allUsers() {
+		return uRepo.findAll();
+	}
 	
 	
 	//REGISTER

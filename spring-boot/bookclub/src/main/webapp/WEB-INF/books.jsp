@@ -36,12 +36,12 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="book" items="${user.books}">
+			<c:forEach var="book" items="${books}">
 			<tr>
 				<td><c:out value="${book.id}"/></td>
-				<td><c:out value="${book.title}"/></td>
+				<td><a href="/books/${book.id}">${book.title}</a></td>
 				<td><c:out value="${book.authorName}"/></td>
-				<td><c:out value="${book.userName}"/></td>
+				<td><c:out value="${book.user.userName}"/></td>
 			</tr>	
 			</c:forEach>
 		</tbody>

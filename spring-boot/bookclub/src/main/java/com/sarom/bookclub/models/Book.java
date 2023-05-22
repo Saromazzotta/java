@@ -60,7 +60,13 @@ public class Book {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="user_id")
 	private User user;
+	
 
+
+// Constructor -------------------------------------------- **DO NOT FORGET**
+	public Book() {}
+	
+	
 	
 // SETTERS & GETTERS ------------------------------------------------
 	public Long getId() {

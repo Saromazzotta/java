@@ -12,15 +12,31 @@ import com.sarom.bookclub.repositories.BookRepo;
 public class BookService {
 
 	@Autowired
-	private BookRepo bookRepo;
-	
-	// FIND ALL
-	public List<Book> allBooks() {
-		return bookRepo.findAll();
-	}
+	private BookRepo bRepo;
 	
 	// CREATE
 	public Book create(Book newBook) {
-		return bookRepo.save(newBook);
+		return bRepo.save(newBook);
+	}
+	
+	// FIND ALL
+	public List<Book> allBooks() {
+		return bRepo.findAll();
+	}
+	
+	// FindById
+	public Book getById(Long id) {
+		return this.bRepo.findById(id).orElse(null);
+	}
+	
+	
+	// UPDATE
+	public Book update(Book toUpdate) {
+		return this.bRepo.save(toUpdate);
+	}
+	
+	// DELETE
+	public void deleteById(Long id) {
+		this.bRepo.deleteById(id);
 	}
 }
